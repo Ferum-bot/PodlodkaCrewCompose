@@ -1,4 +1,4 @@
-package com.github.ferum_bot.podlodcrewcompose
+package com.github.ferum_bot.podlodcrewcompose.ui.activity
 
 import android.os.Bundle
 import android.widget.Toast
@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.github.ferum_bot.podlodcrewcompose.ui.compose.main_screen.MainContent
 import com.github.ferum_bot.podlodcrewcompose.ui.theme.PodlodCrewComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,35 +31,5 @@ class MainActivity : ComponentActivity() {
 
     private fun showToast(text: String) {
         Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
-    }
-}
-
-@Composable
-fun MainContent(buttonClick: () -> Unit ) {
-    Box(
-        modifier = Modifier.fillMaxSize().padding(PaddingValues(16.dp, 0.dp)),
-        contentAlignment = Alignment.Center
-    ) {
-        Button(
-            onClick = buttonClick,
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Text(text = "ClickMe")
-        }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    PodlodCrewComposeTheme {
-        MainContent {
-
-        }
     }
 }
