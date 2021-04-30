@@ -2,6 +2,7 @@ package com.github.ferum_bot.podlodcrewcompose.di.components
 
 import android.app.Application
 import android.content.Context
+import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
@@ -14,7 +15,8 @@ interface AppComponent {
     @Component.Builder
     interface Builder {
 
-        fun add(appContext: Context)
+        @BindsInstance
+        fun add(appContext: Context): Builder
 
         fun build(): AppComponent
     }
